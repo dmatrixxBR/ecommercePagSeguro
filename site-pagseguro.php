@@ -3,7 +3,7 @@
 use \Hcode\Page;
 use \Hcode\Model\User;
 use \Hcode\PagSeguro\Config;
-use \HCode\PagSeguro\Transporter;
+use \Hcode\PagSeguro\Transporter;
 use \Hcode\Model\Order;
 
 
@@ -29,7 +29,7 @@ $app->get('/payment', function(){
 		"order"=>$order->getValues(),
 		"msgError"=>Order::getError(),
 		"years"=>$years,
-		"PagSeguro"=>[
+		"pagseguro"=>[
 			"urlJS"=>Config::getUrlJS(),
 			"id"=>Transporter::createSession()
 		]
