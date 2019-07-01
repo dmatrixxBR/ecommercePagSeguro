@@ -58,24 +58,24 @@ class Document {
     }
     
     
+    public function getDOMElement():DOMElement
+    {
+    
+        $dom = new DOMDocument();
+    
+        $document = $dom->createElement("document");
+        $document = $dom->appendChild($document);
+    
+        $type = $dom->createElement("type", $this->type);
+        $type = $document->appendChild($type);
+    
+        $value = $dom->createElement("value", $this->value);
+        $type = $document->appendChild($value);
+    
+        return $document;
+    
+    }
 
 
 }
 
-public function getDOMElement():DOMElement
-{
-
-    $dom = new DOMDocument();
-
-    $document = $dom->createElement("document");
-    $document = $dom->appendChild($document);
-
-    $type = $dom->createElement("type", $this->type);
-    $type = $document->appendChild($type);
-
-    $value = $dom->createElement("value", $this->value);
-    $type = $document->appendChild($value);
-
-    return $document;
-
-}
