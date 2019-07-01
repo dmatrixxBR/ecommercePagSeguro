@@ -9,7 +9,7 @@ class Document {
 
     const CPF = "CPF";
 
-    public function _construct(string $type, string $value)
+    public function __construct(string $type, string $value)
     {
 
         if (!$value)

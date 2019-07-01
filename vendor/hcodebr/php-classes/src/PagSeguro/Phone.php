@@ -7,7 +7,7 @@ class Phone {
     private $areaCode;
     private $number;
 
-    public function _construct(int $areaCode , int $number)
+    public function __construct(int $areaCode , int $number)
     {
 
         if (!$areaCode || $areaCode < 11 || $areaCode > 99)
