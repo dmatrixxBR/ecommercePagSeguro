@@ -63,7 +63,7 @@ class Sender {
         $email = $sender->appendChild($email);
 
         $bornDate = $dom->createElement("bornDate", $this->bornDate->format("d/m/Y"));
-        $name = $sender->appendChild($bornDate);
+        $bornDate = $sender->appendChild($bornDate);
 
         $documents = $dom->createElement("documents");
         $documents = $sender->appendChild($documents);
@@ -83,6 +83,7 @@ class Sender {
         $ip = $sender->appendChild($ip);
     
         return $sender;
+        
     
     }
 
