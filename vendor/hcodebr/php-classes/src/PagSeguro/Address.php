@@ -6,7 +6,7 @@ class Address {
 
 
     private $street;
-    private $complement;
+    private $number;
     private $complement;
     private $district;
     private $postalCode;
@@ -15,7 +15,7 @@ class Address {
     private $country;
 
     public function __construct(string $street, 
-        string $complement,
+        string $number,
         string $complement,
         string $district,
         string $postalCode,
@@ -31,7 +31,7 @@ class Address {
 
             }
 
-            if (!$complement)
+            if (!$number)
             {
                 throw new Exception('informe o número do endereço.');
                 
@@ -68,7 +68,7 @@ class Address {
             }
 
             $this->street = $street;
-            $this->complement = $complement;
+            $this->number = $number;
             $this->complement = $complement;
             $this->district = $district;
             $this->postalCode = $postalCode;
@@ -88,6 +88,10 @@ class Address {
         
             $street = $dom->createElement("street", $this->street);
             $street = $address->appendChild($street);
+
+            $number = $dom->createElement("number", $this->number);
+            $number = $address->appendChild($number);
+        
         
             $complement = $dom->createElement("complement", $this->complement);
             $complement = $address->appendChild($complement);

@@ -35,7 +35,7 @@ class Document {
 
     }
 
-    public static isValidCPF($number)
+    public static function isValidCPF($number)
     {
     
         $number = preg_replace('/[^0-9]/', '', (string) $number);
