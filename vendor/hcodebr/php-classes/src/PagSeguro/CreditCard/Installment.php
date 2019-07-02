@@ -39,7 +39,7 @@ class Installment {
         $value = $dom->createElement("value", number_format($this->value,2, ".", ""));
         $value = $installment->appendChild($value);
 
-        $quantity = $dom->createElement("type", $this->quantity);
+        $quantity = $dom->createElement("quantity", $this->quantity);
         $quantity = $installment->appendChild($quantity);
 
         $noInterestInstallmentQuantity = $dom->createElement("noInterestInstallmentQuantity",Config::MAX_INSTALLMENT_NO_INTEREST);
