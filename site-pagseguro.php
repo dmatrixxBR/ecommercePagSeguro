@@ -98,13 +98,7 @@ $app->post('/payment/credit', function(){
 		$billingAddress
 	);
 
-	$payment = new Payment(
-
-		$order->getitorder(),
-		$sender,
-		$shipping
-	);
-
+	$payment = new Payment($order->getitorder(),$sender,$shipping);
 
 	foreach($cart->getProducts() as $product)
 	{
@@ -122,6 +116,7 @@ $app->post('/payment/credit', function(){
 	}
 
 	$payment->setCreditCard($creditCard);
+
 
 	$dom = $payment->getDOMDocument();
 	//$dom = new DOMDocument();
