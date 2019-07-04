@@ -62,6 +62,9 @@ class Payment {
     {
         $dom = new DOMDocument("1.0","ISO-8859-1");
 
+        $payment = $dom->createElement("payment");
+        $payment = $dom->AppendChild($payment);
+
         return $dom;
     }
 

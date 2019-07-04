@@ -98,7 +98,12 @@ $app->post('/payment/credit', function(){
 		$billingAddress
 	);
 
-	$payment = new Payment($order->getitorder(),$sender,$shipping);
+	$payment = new Payment(
+	
+		(string)$order->getitorder(),
+		$sender,
+		$shipping
+	);
 
 	foreach($cart->getProducts() as $product)
 	{

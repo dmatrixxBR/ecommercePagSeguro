@@ -18,7 +18,7 @@ class Item {
         int $id,
         string $description,
         float $amount,
-        int $qunatity
+        int $quantity
     )
     {
 
