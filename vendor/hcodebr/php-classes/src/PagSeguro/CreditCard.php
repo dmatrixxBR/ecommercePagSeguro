@@ -2,18 +2,24 @@
 
 namespace Hcode\PagSeguro;
 
-class Payment {
+use Exception;
+use DOMDocument;
+use DOMElement;
+use Hcode\PagSeguro\CreditCard\Installment;
+use Hcode\PagSeguro\CreditCard\Holder;
 
-    private $mode = "default";
-    private $currency = "BRL";
-    private $extraAmount = 0;
-    private $reference = "";
-    private $items = [];
-    private $sender;
-    private $shipping;
-    private $method;
-    private $creditCard;
-    private $bank;
+class CreditCard {
+
+    private $token;
+    private $installment;
+    private $holder;
+    private $billingAddress;
+   // private $items = [];
+   // private $sender;
+   // private $shipping;
+   // private $method;
+   // private $creditCard;
+   // private $bank;
 
 
     public function __construct(
@@ -24,7 +30,7 @@ class Payment {
     )
     {
 
-        if (!token)
+        if (!$token)
         {
             throw new Exception("Informe o token do cartão de Credito"); 
         }
@@ -53,11 +59,11 @@ class Payment {
 
         $holder = $this->holder->getDOMElement();
         $holder = $dom->importNode($holder,true);
-        $hcreditCard->appendChild($holder);
+        $holder = $creditCard->appendChild($holder);
 
         $billingAddress = $this->billingAddress->getDOMElement("billingAddress");
         $billingAddress = $dom->importNode($billingAddress,true);
-        $billingAdcreditCard->appendChild($billingAddress);
+        $billingAddress = $creditCard->appendChild($billingAddress);
 
     
         return $creditCard;
