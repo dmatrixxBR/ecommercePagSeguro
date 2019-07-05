@@ -73,6 +73,9 @@ class Item {
         $description = $dom->createElement("description", $this->description);
         $description = $item->appendChild($description);
 
+
+
+
         return $item;
         
     

@@ -82,7 +82,7 @@ class Payment {
         $sender = $payment->appendChild($sender);
 
         $items = $dom->createElement("items");
-        $items = $payment->appendChild($sender);
+        $items = $payment->appendChild($items);
 
         foreach($this->items as $_item)
         {

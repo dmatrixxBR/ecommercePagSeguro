@@ -366,7 +366,7 @@ $("#number_field").on("change", function(){
                     success: function(response){
                         // Retorna as opções de parcelamento disponíveis
 
-                        $("#installments_field").html('<option disabled="disabled"></option>');
+                        $("#installments_field").html('<option value="">Escolha as Parcelas</option>');
 
                         var tplInstallmentFree = Handlebars.compile($("#tpl-installment-free").html());
                         var tplInstallment = Handlebars.compile($("#tpl-installment").html());

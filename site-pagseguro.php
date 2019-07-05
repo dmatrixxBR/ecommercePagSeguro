@@ -108,7 +108,7 @@ $app->post('/payment/credit', function(){
 	foreach($cart->getProducts() as $product)
 	{
 
-
+		$peso = 0.0;
 		$item = new Item(
 			(int)$product['idproduct'],
 			$product['desproduct'],
@@ -123,6 +123,7 @@ $app->post('/payment/credit', function(){
 	$payment->setCreditCard($creditCard);
 
 
+	//Transporter::sendTransaction($payment);
 	$dom = $payment->getDOMDocument();
 	//$dom = new DOMDocument();
 
