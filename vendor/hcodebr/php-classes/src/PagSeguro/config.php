@@ -21,6 +21,9 @@ class Config {
     const MAX_INSTALLMENT_NO_INTEREST = 6;
     const MAX_INSTALLMENT = 7;
 
+ //modificar a url de notificacao para a do seu site hospedado
+    const NOTIFICATION_URL = "http://www.html5dev.com.br/payment/notification";
+
     public static function getAuthentication(): array
     {
 

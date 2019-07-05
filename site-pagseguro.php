@@ -100,7 +100,7 @@ $app->post('/payment/credit', function(){
 
 	$payment = new Payment(
 	
-		(string)$order->getitorder(),
+		(string)$order->getidorder(),
 		$sender,
 		$shipping
 	);
