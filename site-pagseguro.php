@@ -123,8 +123,8 @@ $app->post('/payment/credit', function(){
 	$payment->setCreditCard($creditCard);
 
 
-	//Transporter::sendTransaction($payment);
-	$dom = $payment->getDOMDocument();
+	Transporter::sendTransaction($payment);
+	//$dom = $payment->getDOMDocument();
 	//$dom = new DOMDocument();
 
 	//$test = $creditCard->getDOMElement();
@@ -133,7 +133,7 @@ $app->post('/payment/credit', function(){
 
 	//$dom->appendChild($testNode);
 
-	echo $dom->saveXml();
+	//echo $dom->saveXml();
 
 });
 
