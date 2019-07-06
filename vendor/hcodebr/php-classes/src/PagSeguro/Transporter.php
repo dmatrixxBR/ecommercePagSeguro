@@ -3,6 +3,7 @@
 namespace Hcode\PagSeguro;
 
 use \GuzzleHttp\Client; 
+use \Hcode\Model\Order;
 
 class Transporter {
 
@@ -33,12 +34,27 @@ class Transporter {
    
         $xml = simplexml_load_string( $response->getBody()-> getContents());
 
-        var_dump($xml);
+           // var_dump($xml);
 
-        return((string)$xml->id);
+        $order = new Order();
 
+        $order->get((int)$xml->reference);
 
+        $order->setPagSeguroTransactionResponse(
 
+           (string)$xml->code,
+           (float)$xml->grossAmount,
+           (float)$xml->discountAmount,
+           (float)$xml->feeAmount,
+           (float)$xml->netAmount,
+           (float)$xml->extraAmount,
+           (float)$xml->paymentLink
+         );
+
+         //var_dump('OK');
+
+         return $xml;
+            
     }
 
 

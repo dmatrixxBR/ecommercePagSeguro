@@ -124,6 +124,11 @@ $app->post('/payment/credit', function(){
 
 
 	Transporter::sendTransaction($payment);
+
+	echo json_encode([
+
+		'success'=>true
+	]);
 	//$dom = $payment->getDOMDocument();
 	//$dom = new DOMDocument();
 
