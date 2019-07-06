@@ -130,6 +130,9 @@ class Payment {
             break;
         }
 
+        //echo $dom->saveXML();
+        //exit;
+
         return $dom;
     }
 
