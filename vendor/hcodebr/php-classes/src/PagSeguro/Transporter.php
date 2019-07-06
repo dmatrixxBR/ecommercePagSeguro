@@ -48,10 +48,10 @@ class Transporter {
            (float)$xml->feeAmount,
            (float)$xml->netAmount,
            (float)$xml->extraAmount,
-           (float)$xml->paymentLink
+           (string)$xml->paymentLink
          );
 
-         //var_dump('OK');
+         //var_dump();
 
          return $xml;
             
