@@ -506,7 +506,15 @@ $("#form-credit").on("submit", function(e){
                                     $.param(params),
                                     function(r){
 
-                                        console.log(r);
+                                    var response = JSON.parse(r);
+
+                                    if (response.success){
+                                        window.location.href = "/payment/success";
+                                    }
+                                    else {
+                                        showError("Não foi possível efetuar o pagamento.");
+                                    }
+
                                     }
                                 )
 
